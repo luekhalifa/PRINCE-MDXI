@@ -40,13 +40,13 @@
     "AUTO_VOICE": {
       "description": "Make it true if you want bot auto voice.",
       "required": true,
-      "value": "true"
+      "value": "false"
     }, 
 
     "AUTO_REPLY": {
       "description": "Make it true if you want bot auto reply.",
       "required": true,
-      "value": "true"
+      "value": "false"
     }, 
 
     "AUTO_STICKER": {
@@ -64,7 +64,7 @@
     "ANTI_LINK": {
       "description": "Make it true if you want bot auto remove group link.",
       "required": true,
-      "value": "true"
+      "value": "false"
     },
 
     "ANTI_BAD": {
@@ -103,6 +103,7 @@
       "required": true,
       "value": "false"
     }
+
 
 },
 

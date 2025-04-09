@@ -1,18 +1,16 @@
-
-
 //const fetch = require("node-fetch");
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, sleep, fetchJson} = require('../lib/functions')
 const { cmd } = require("../command");
 
-// get pair 1
+// get pair 2
 
 cmd({
     pattern: "pair",
-    alias: ["getpair", "session"],
+    alias: ["getpair", "clonebot"],
     react: "✅",
     desc: "Pairing code",
     category: "download",
-    use: ".pair +2xxxxxxxxxx",
+    use: ".pair +233714757XXX",
     filename: __filename
 }, 
 async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
@@ -22,12 +20,12 @@ async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
 
         // Validate input
         if (!q) {
-            return await reply("*Example : .Pair 237XXXXXXXX*");
+            return await reply("*Example -* .pair +23714757XXX");
         }
 
         // Fetch pairing code
         //const fetch = require("node-fetch");
-        const response = await fetch(`https://prince-md-v2-session-id-w9re.onrender.com/code?number=${q}`);
+        const response = await fetch(`hhttps://prince-md-v2-session-id-w9re.onrender.com/code?phone=${q}`);
         const pair = await response.json();
 
         // Check for errors in response
@@ -37,19 +35,18 @@ async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
 
         // Success response
         const pairingCode = pair.code;
-        const doneMessage = "> *PRINCE MDXI PAIR COMPLETED*";
+        const doneMessage = "> PRINCE-MDX PAIR COMPLETED";
 
         // Send first message
-        await reply(`${doneMessage}\n\n> *PAIRING CODE IS: ${pairingCode}*`);
+        await reply(`${doneMessage}\n\n*Your pairing code is:* ${pairingCode}`);
 
-        // Add a delay of 1 seconds before sending the second message
-        await sleep(1000);
+        // Add a delay of 2 seconds before sending the second message
+        await sleep(2000);
 
         // Send second message with just the pairing code
-        await reply(`${pairingCode}`);
+        await reply(`Code: ${pairingCode}`);
     } catch (error) {
         console.error(error);
         await reply("An error occurred. Please try again later.");
     }
 });
-          

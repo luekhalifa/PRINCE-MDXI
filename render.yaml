@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: PRINCE-MDXI
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    autoDeploy: true
+    envVars:
+      - key: SESSION_ID
+        value: prince_md-7EllHZDa#BwR7vNRfsIxxVDlsCDcqq0IIs-X6bn9KLh16Q-3RULw
+      - key: MODE
+        value: private
+      - key: AUTO_READ_STATUS
+        value: true
+      - key: AUTO_REPLY
+        value: false
+      - key: ALIVE_IMG
+        value: https://img12.pixhost.to/images/856/575170607_skyzopedia.jpg
+      - key: MENU_IMG
+        value: https://files.catbox.moe/kzfne8.jpeg
+      - key: PREFIX
+        value: .
+      - key: OMDB_API_KEY
+        value: 76cb7f39
